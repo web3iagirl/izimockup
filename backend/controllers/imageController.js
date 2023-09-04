@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('/models/User'); // Assurez-vous que ce chemin est correct
 const { generateImage } = require('midjourney-api'); // Remplacez par le bon package ou méthode
+import { generateImage } from './imageGenerationService';
+
 
 exports.generateImage = async (req, res) => {
   const { userId } = jwt.decode(req.headers.authorization);
